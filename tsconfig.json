@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "./dist/typings",
+    "rootDir": "src",
+    "outDir": "./dist"
+  }
+}

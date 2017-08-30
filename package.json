@@ -1,0 +1,30 @@
+{
+  "name": "rxstore",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hufeng/rxstore.git",
+  "author": "hufeng <hufeng@qianmi.com>",
+  "license": "BSD",
+  "scripts": {
+    "compile": "tsc",
+    "test": "./node_modules/.bin/jest  --watch"
+  },
+  "files": ["README.md", "dist", "package.json"],
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": ["ts", "tsx", "js", "json"]
+  },
+  "description": "a simple predict and reactive state container for wxapp",
+  "devDependencies": {
+    "@types/jest": "^20.0.8",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^20.0.4",
+    "ts-jest": "^20.0.13",
+    "typescript": "^2.4.2"
+  }
+}
