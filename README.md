@@ -2,7 +2,7 @@
 a simple reactive predict state container for wxapp [针对微信小程序的一个简单的状态管理容器]
 
 
-TOOD: 实现 getObjectPath
+** TOOD: 实现 getObjectPath **
 
 ## demo
 
@@ -16,9 +16,7 @@ const helloQL = QL('helloQL', [
 ])
 
 class MyStore extends RxStore {
-  /**
-   * 默认的容器初始状态
-   */
+ 
   defaultState() {
     return {
       motto: 'hello world',
@@ -37,6 +35,7 @@ class MyStore extends RxStore {
 
 const myStore = new MyStore();
 
+//和小程序集成
 Page({
   data: myStore.getState(),
 
