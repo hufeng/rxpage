@@ -1,5 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lifecycle method 1`] = `
+PageParser {
+  "lifecycleMethodStack": Object {
+    "onHide": Array [],
+    "onLoad": Array [
+      [Function],
+      [Function],
+      [Function],
+      [Function],
+    ],
+    "onPageScroll": Array [],
+    "onPullDownRefresh": Array [],
+    "onReachBottom": Array [],
+    "onReady": Array [],
+    "onShareAppMessage": Array [],
+    "onShow": Array [
+      [Function],
+      [Function],
+      [Function],
+    ],
+    "onUnload": Array [
+      [Function],
+      [Function],
+      [Function],
+      [Function],
+    ],
+  },
+  "page": Object {
+    "data": Object {
+      "btn": "hello btn",
+      "hello": "hello",
+      "text": "loading...",
+    },
+    "hello": [Function],
+  },
+}
+`;
+
+exports[`lifecycle method 2`] = `
+Object {
+  "data": Object {
+    "btn": "hello btn",
+    "hello": "hello",
+    "text": "loading...",
+  },
+  "hello": [Function],
+  "onLoad": [Function],
+  "onShow": [Function],
+  "onUnload": [Function],
+}
+`;
+
 exports[`mixins 1`] = `
 Object {
   "data": Object {
@@ -13,8 +65,19 @@ Object {
 `;
 
 exports[`mixins 2`] = `
-PageFactory {
-  "_page": Object {
+PageParser {
+  "lifecycleMethodStack": Object {
+    "onHide": Array [],
+    "onLoad": Array [],
+    "onPageScroll": Array [],
+    "onPullDownRefresh": Array [],
+    "onReachBottom": Array [],
+    "onReady": Array [],
+    "onShareAppMessage": Array [],
+    "onShow": Array [],
+    "onUnload": Array [],
+  },
+  "page": Object {
     "data": Object {
       "btn": true,
       "hello": "hello",
