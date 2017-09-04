@@ -95,7 +95,7 @@ export class PageParser {
    * 生命周期方法，合并处理
    * @param obj 
    */
-  parseLifeCycleMethod(obj: Object) {
+  private parseLifeCycleMethod(obj: Object) {
     if (!obj) {
       return;
     }
@@ -118,7 +118,7 @@ export class PageParser {
     };
   }
 
-  mixinLifeCycle() {
+  private mixinLifeCycle() {
     const lifecycleMethodStack = this.lifecycleMethodStack;
     Object.keys(lifecycleMethodStack).forEach(name => {
       const stack = lifecycleMethodStack[name];
