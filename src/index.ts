@@ -149,6 +149,5 @@ export class PageParser {
 }
 
 export default function RxPage(opts) {
-  const factory = new PageParser(opts);
-  return Page(factory.getPage());
+  Page(new PageParser(opts));
 }
