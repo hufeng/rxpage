@@ -1,51 +1,59 @@
-# rxstore
-a simple reactive predict state container for wxapp [针对微信小程序的一个简单的状态管理容器]
-
-
-** TOOD: 实现 getObjectPath **
+# rxpage
+a simple wrapper for wxapp page (support mixins, lifecycle method merge)
 
 ## demo
 
 ```js
 
-import {QL, RxStore} from 'rxstore';
+import RxPage from 'rxpage';
 
-const helloQL = QL('helloQL', [
-  'mott',
-  state => state.mott + '!'
-])
+const Btn = {
+  data: {
+    btnText: 'Touch me'
+  },
+  onBtnClick() {
 
-class MyStore extends RxStore {
- 
-  defaultState() {
-    return {
-      motto: 'hello world',
-      userInfo: {
-        name: 'Amy'
-      }
-    }
   }
+},
 
-  ql() {
-    return [
-      helloQL
-    ]
+const LoadingMore = {
+  data: {
+    isLoading: true
+  },
+
+  onLoadingEnd() {
+    this.setData({
+      isLoading: false
+    })
   }
 }
 
-const myStore = new MyStore();
+RxPage({
+  data: {
+    id: 1,
+    motto: 'hello world'
+  },
+  mixins: [
+    Btn,
+    LoadingMore
+  ]
+})
 
-//和小程序集成
+// RxPage return => 
+
 Page({
-  data: myStore.getState(),
+  data: {
+    id: 1,
+    motto: 'hello world',
+    isLoading: true,
+    btnText: 'Touch me'
+  },
+  onBtnClick() {
 
-  onLoad() {
-    myStore.withContext(this);
-  }
-
-  onMottoTouch() {
-    myStore.setState({
-      motto: 'hello wxapp world'
+  },
+  onLoadingEnd() {
+    this.setData({
+      isLoading: false
     })
   }
 })

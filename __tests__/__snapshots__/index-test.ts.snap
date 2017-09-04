@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mixins 1`] = `
+Object {
+  "data": Object {
+    "hello": "hello",
+    "id": 1,
+    "world": "world",
+  },
+  "sayHello": [Function],
+  "sayWorld": [Function],
+}
+`;
+
+exports[`mixins 2`] = `
+PageFactory {
+  "_page": Object {
+    "data": Object {
+      "btn": true,
+      "hello": "hello",
+      "id": 2,
+      "name": "rxpage",
+      "nested": true,
+      "test": true,
+      "world": "world",
+    },
+    "sayHello": [Function],
+    "sayWorld": [Function],
+  },
+}
+`;
