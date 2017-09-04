@@ -4,6 +4,7 @@
   "main": "index.js",
   "repository": "https://github.com/hufeng/rxstore.git",
   "author": "hufeng <hufeng@qianmi.com>",
+  "types": "./dist/typings/index.d.ts",
   "license": "BSD",
   "scripts": {
     "compile": "tsc",
