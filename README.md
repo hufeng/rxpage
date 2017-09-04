@@ -4,22 +4,32 @@ a simple wrapper for wxapp page (support mixins, lifecycle method merge)
 ## demo
 
 ```js
-
-import RxPage from 'rxpage';
-
+//btn/index.js
 const Btn = {
   data: {
     btnText: 'Touch me'
   },
-  onBtnClick() {
 
+  onBtnClick() {},
+
+  onLoad() {
+    console.log('btn onLoad')
+  },
+
+  onUnload() {
+    console.log('btn onUnload')
   }
 },
 
+//loading-more/index.js
 const LoadingMore = {
   data: {
     isLoading: true
   },
+
+  onLoad() {
+    console.log('loading more onload');
+  }
 
   onLoadingEnd() {
     this.setData({
@@ -27,6 +37,11 @@ const LoadingMore = {
     })
   }
 }
+```
+
+```js
+
+import RxPage from 'rxpage';
 
 RxPage({
   data: {
@@ -36,7 +51,13 @@ RxPage({
   mixins: [
     Btn,
     LoadingMore
-  ]
+  ],
+  onLoad(opts) {
+    console.log('I am Loading');
+  },
+  onUnload() {
+    console.log('I am Unload');
+  }
 })
 
 // RxPage return => 
@@ -48,13 +69,38 @@ Page({
     isLoading: true,
     btnText: 'Touch me'
   },
-  onBtnClick() {
+  
+  onBtnClick() {},
 
-  },
   onLoadingEnd() {
     this.setData({
       isLoading: false
     })
+  },
+
+  onLoad(opts) {
+    [
+      onLoad(opts) {
+        console.log('I am Loading');
+      },
+      onLoad() {
+        console.log('btn onLoad')
+      },
+      onLoad() {
+       console.log('loading more onload');
+      }
+    ].reverse().forEach(method => method(opts))
+  },
+  
+  onUnload() {
+    [
+      onUnload() {
+       console.log('I am Unload');
+      },
+      onUnload() {
+        console.log('btn onUnload')
+      }
+    ].forEach(method => method())
   }
 })
 
